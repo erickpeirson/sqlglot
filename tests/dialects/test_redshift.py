@@ -74,6 +74,17 @@ class TestRedshift(Validator):
             },
         )
         self.validate_all(
+            "SELECT GETDATE()",
+            write={
+                "bigquery": "SELECT CURRENT_TIMESTAMP()",
+                "duckdb": "SELECT CURRENT_TIMESTAMP",
+                "postgres": "SELECT CURRENT_TIMESTAMP",
+                "redshift": "SELECT SYSDATE",
+                "trino": "SELECT CURRENT_TIMESTAMP",
+                "tsql": "SELECT GETDATE()"
+            }
+        )
+        self.validate_all(
             "SELECT ADD_MONTHS('2008-03-31', 1)",
             write={
                 "bigquery": "SELECT DATE_ADD(CAST('2008-03-31' AS DATETIME), INTERVAL 1 MONTH)",
