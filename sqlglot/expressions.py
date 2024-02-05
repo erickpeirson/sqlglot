@@ -4634,6 +4634,10 @@ class CurrentTimestamp(Func):
     arg_types = {"this": False}
 
 
+class CurrentSystemTimestamp(Func):
+    arg_types = {"this": False}
+
+
 class CurrentUser(Func):
     arg_types = {"this": False}
 

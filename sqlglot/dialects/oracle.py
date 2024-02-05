@@ -255,7 +255,7 @@ class Oracle(Dialect):
             "ORDER SIBLINGS BY": TokenType.ORDER_SIBLINGS_BY,
             "SAMPLE": TokenType.TABLE_SAMPLE,
             "START": TokenType.BEGIN,
-            "SYSDATE": TokenType.CURRENT_TIMESTAMP,
+            "SYSDATE": TokenType.CURRENT_SYSTEM_TIMESTAMP,
             "TOP": TokenType.TOP,
             "VARCHAR2": TokenType.VARCHAR,
         }

@@ -724,6 +724,7 @@ def date_add_interval_sql(
 
 
 def timestamptrunc_sql(self: Generator, expression: exp.TimestampTrunc) -> str:
+    print(":::", expression.text, expression.this)
     return self.func(
         "DATE_TRUNC", exp.Literal.string(expression.text("unit").upper() or "DAY"), expression.this
     )
